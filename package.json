@@ -1,0 +1,17 @@
+{
+  "name": "mongo-key-escape",
+  "version": "0.0.1",
+  "repository": "git://github.com/segmentio/mongo-key-escape.git",
+  "license": "MIT",
+  "description": "Escape mongo keys for periods and dollar signs",
+  "keywords": [
+    "mongo",
+    "key",
+    "escape",
+    "period",
+    "dollar"
+  ],
+  "devDependencies": {
+    "mocha": "~1.17.1"
+  }
+}
