@@ -41,8 +41,9 @@ function unescape (key) {
 
 function jsonEscape (json) {
   for(k in json){
-    json[escape(k)] = json[k];
+    var temp =json[k];
     delete json[k];
+    json[escape(k)] = temp
   }
   return json;
 }
@@ -56,8 +57,9 @@ function jsonEscape (json) {
 
 function jsonUnescape (json) {
   for(k in json){
-    json[unescape(k)] = json[k];
+    var temp =json[k];
     delete json[k];
+    json[unescape(k)] = temp
   }
   return json;
 }
