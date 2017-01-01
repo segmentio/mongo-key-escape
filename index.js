@@ -5,6 +5,7 @@
  */
 exports.escape = escape;
 exports.unescape = unescape;
+exports.jsonEscape = jsonEscape;
 
 /**
  * Escapes the mongo `key`.
@@ -28,4 +29,19 @@ function escape (key) {
 function unescape (key) {
   return key.replace(/\uFF04/g, '$')
             .replace(/\uFF0E/g, '.');
+}
+
+/**
+ * Escapes the mongo `key`.
+ *
+ * @param {Object} json
+ * @return {String}
+ */
+
+function jsonEscape (json) {
+  for(k in json){
+    json[escape(k)] = json[k];
+    delete json[k];
+  }
+  return json;
 }
