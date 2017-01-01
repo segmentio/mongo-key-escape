@@ -22,9 +22,13 @@ key.escape('event$thing');
 key.unescape('event\uFF04thing');
 // 'event$thing'
 
-var object = {"10.0.5":"First.", "10.1.5":"Secund." }
+var object = {"10.0.5":"First.", "10.1.5":"Secund."}
 key.jsonEscape(object)
-// {"10uFF0E0uFF0E5":"First.", "10uFF0E1uFF0E5":"Secund." }
+// {"10uFF0E0uFF0E5":"First.", "10uFF0E1uFF0E5":"Secund."}
+
+var object = {"10uFF0E0uFF0E5":"First.", "10uFF0E1uFF0E5":"Secund."}
+key.jsonUnescape(object)
+// {"10.0.5":"First.", "10.1.5":"Secund."}
 ```
 
 ## License
